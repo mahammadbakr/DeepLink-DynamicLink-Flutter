@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class AppTheme {
   //Light Color Constants
@@ -9,13 +8,11 @@ class AppTheme {
   static const backgroundColor = const Color(0xFFf2f2f2);
   static const interactionColor = const Color(0xFFFADF56);
 
-
   //Dark Color Constants
   static const darkPrimaryColor = const Color(0xff242526);
   static const darkAccentColor = const Color(0xfffefefe);
   static const darkBackgroundColor = const Color(0xFFf2f2f2);
   static const darkInteractionColor = const Color(0xFFFADF56);
-
 
   //Other Color Constant
   static const white = const Color(0xffffffff);
@@ -24,26 +21,19 @@ class AppTheme {
   static const warningColor = const Color(0xffFFCF5C);
   static const errorColor = const Color(0xffF75010);
 
-
   static final ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: white,
     backgroundColor: backgroundColor,
-    brightness: Brightness.light,
     primaryColor: primaryColor,
     accentColor: accentColor,
     textTheme: lightTextTheme,
-    // fontFamily: 'Montserrat',
     primarySwatch: Colors.yellow,
+    buttonColor: Colors.yellow.shade600,
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(color: black),
-      brightness: Brightness.light,
-      // backgroundColor: appBarColor,
       color: primaryColor,
-      textTheme: TextTheme(
-          headline6: _headline6.copyWith(
-              color: black, fontWeight: FontWeight.w300)),
+      textTheme: lightTextTheme,
       elevation: 1,
-      shadowColor: primaryColor,
     ),
     tabBarTheme: TabBarTheme(
       labelColor: accentColor,
@@ -54,32 +44,22 @@ class AppTheme {
   static final ThemeData darkTheme = ThemeData(
     scaffoldBackgroundColor: black,
     backgroundColor: darkBackgroundColor,
-    brightness: Brightness.light,
     primaryColor: darkPrimaryColor,
     accentColor: darkAccentColor,
     textTheme: darkTextTheme,
-    // fontFamily: 'Montserrat',
     primarySwatch: Colors.yellow,
+    buttonColor: Colors.yellow.shade300,
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(color: white),
-      brightness: Brightness.light,
-      // backgroundColor: darkAppBarColor,
       color: darkPrimaryColor,
-      textTheme: TextTheme(
-          headline6: _headline6.copyWith(
-              color: white, fontWeight: FontWeight.w300)),
+      textTheme: darkTextTheme,
       elevation: 1,
-      shadowColor: primaryColor,
     ),
     tabBarTheme: TabBarTheme(
       labelColor: darkAccentColor,
       unselectedLabelColor: darkAccentColor.withOpacity(0.5),
     ),
   );
-
-
-
-
 
   // Light Text Theme
   static final TextTheme lightTextTheme = TextTheme(
@@ -97,7 +77,6 @@ class AppTheme {
     caption: _caption.copyWith(color: AppTheme.black),
     overline: _overline.copyWith(color: AppTheme.black),
   );
-
 
   // Dark Text Theme
   static final TextTheme darkTextTheme = TextTheme(
@@ -161,7 +140,7 @@ class AppTheme {
   );
   static final TextStyle _button = TextStyle(
     fontWeight: FontWeight.w600,
-    fontSize: 14,
+    fontSize: 24,
   );
   static final TextStyle _caption = TextStyle(
     fontWeight: FontWeight.w400,
@@ -171,5 +150,4 @@ class AppTheme {
     fontWeight: FontWeight.w400,
     fontSize: 8,
   );
-
 }

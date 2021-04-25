@@ -4,22 +4,12 @@ import 'package:flutter/material.dart';
 enum NavigationTab { home, search }
 
 class AppSettingsProvider extends ChangeNotifier {
-
-  int tabHome= 0;
+  bool isDarkMode = false;
   NavigationTab _navigationTab= NavigationTab.home;
 
-  void setHomeTab(int tab) {
-    tabHome = tab;
-    notifyListeners();
-  }
 
-  int getHomeTab() {
-    if (tabHome == null) {
-      tabHome = 0;
-    }
-    return tabHome;
-  }
 
+  // Home Navigation Tabs
   void setNavigationTab(NavigationTab navTab) {
     _navigationTab = navTab;
     notifyListeners();
@@ -31,5 +21,18 @@ class AppSettingsProvider extends ChangeNotifier {
     }
     return _navigationTab;
   }
+
+
+  //Dark&Light Mode
+  void setModeDark() {
+    isDarkMode = true;
+    notifyListeners();
+  }
+
+  void setModeLight() {
+    isDarkMode = false;
+    notifyListeners();
+  }
+
 
 }
