@@ -11,6 +11,10 @@ class DataProvider extends ChangeNotifier {
   List<dynamic> searchedNewsList = [];
 
 
+  void setSearchWord({String text}){
+    searchWord = text;
+    notifyListeners();
+  }
   // Fetch all Data News
 
   Future<void> getAllNews() async {

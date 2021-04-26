@@ -7,7 +7,19 @@ enum NavigationTab { home, search }
 class AppSettingsProvider extends ChangeNotifier {
   bool isDarkMode = false;
   bool isWebViewShown = false;
+  bool isSearchClicked = false;
   NavigationTab _navigationTab= NavigationTab.home;
+
+// search States
+  void setSearchOn() {
+    isSearchClicked = true;
+    notifyListeners();
+  }
+
+  void setSearchOff() {
+    isSearchClicked = false;
+    notifyListeners();
+  }
 
 
 

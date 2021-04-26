@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_muhammad/Helpers/DynamicLinksService.dart';
 import 'package:test_muhammad/StateManagment/AppSettingsProvider.dart';
+import 'package:test_muhammad/StateManagment/DataProvider.dart';
 import 'package:test_muhammad/UI/HomeScreen/Tabs/HomeTab.dart';
 import 'package:test_muhammad/UI/HomeScreen/Tabs/SearchTab.dart';
 import 'package:test_muhammad/Utility/ThemeOf.dart';
@@ -16,22 +18,28 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+
+
   Future<void> setupDeepLink() async {
     await createDeepLink();
-    var link = await FirebaseDynamicLinks.instance.getInitialLink();
-    await handleDeepLink(link);
+    // var link = await FirebaseDynamicLinks.instance.getInitialLink();
+    // await handleDeepLink(link,link);
     FirebaseDynamicLinks.instance.onLink(
         onSuccess: (PendingDynamicLinkData dynamicLink) async {
-      await handleDeepLink(dynamicLink);
-    });
+          await handleDeepLink(dynamicLink,dynamicLink.link.toString().split("text=")[1]);
+        });
   }
 
-  Future<void> handleDeepLink(PendingDynamicLinkData data) async {
+  Future<void> handleDeepLink(PendingDynamicLinkData data,String text) async {
     final Uri uri = data?.link;
     if (uri != null) {
       setState(() {
         Provider.of<AppSettingsProvider>(context, listen: false)
             .setNavigationTab(NavigationTab.search);
+         Provider.of<AppSettingsProvider>(context,listen: false).setSearchOn();
+        Provider.of<DataProvider>(context, listen: false)
+            .setSearchWord(text: text);
       });
     }
   }
@@ -43,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
       await setupDeepLink();
     });
   }
+
 
   @override
   Widget build(BuildContext context) {

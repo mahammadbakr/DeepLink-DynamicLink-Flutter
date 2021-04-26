@@ -26,7 +26,7 @@ class SearchBar extends StatelessWidget {
           Expanded(
             child: Consumer<DataProvider>(
               builder: (_, dataList, __) => TextFormField(
-                // initialValue: "Request",
+                initialValue: dataList.searchWord,
                 onChanged: (text) {
                   dataList.getNetworkSearchNews(text: text);
                 },

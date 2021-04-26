@@ -17,7 +17,6 @@ class SearchTab extends StatefulWidget {
 }
 
 class _SearchTabState extends State<SearchTab> {
-  bool isSearchEnabled = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +29,7 @@ class _SearchTabState extends State<SearchTab> {
           GestureDetector(
             onTap: () {
               setState(() {
-                isSearchEnabled = true;
+                appSettings.isSearchClicked = true;
               });
             },
             child: Container(
@@ -40,7 +39,7 @@ class _SearchTabState extends State<SearchTab> {
               child: SearchBar(),
             ),
           ),
-          !isSearchEnabled
+          ! appSettings.isSearchClicked
               ? appSettings.getWebViewShown()
                   ? Expanded(
                       child: Stack(
