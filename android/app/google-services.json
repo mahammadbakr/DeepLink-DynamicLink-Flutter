@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "239003178955",
+    "project_id": "nitl-test",
+    "storage_bucket": "nitl-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239003178955:android:101c52b75af6b9dc80484e",
+        "android_client_info": {
+          "package_name": "com.nitl.test_muhammad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239003178955-rdm8ao5rp5578ec3r7ulbnfte8baoitc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK1NK55nd3UQMA8SUKZxUI2xASkllcmQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239003178955-rdm8ao5rp5578ec3r7ulbnfte8baoitc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "239003178955-nksemfu0jnqbrdm7g1hcfcgvkrij743n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nitl.testMuhammad"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,13 +11,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   void initState() {
     super.initState();
     // send request to API when the app starts ...
     Provider.of<DataProvider>(context, listen: false)
         .getAllNews();
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 2), () async {
       Navigator.pushNamed(context, '/home');
     });
   }

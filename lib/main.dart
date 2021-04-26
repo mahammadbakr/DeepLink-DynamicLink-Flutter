@@ -8,7 +8,6 @@ import 'StateManagment/AppSettingsProvider.dart';
 import 'UI/HomeScreen/HomeScreen.dart';
 import 'UI/SplashScreen/SplashScreen.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
@@ -31,7 +30,13 @@ void main() {
   ));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     final theme = Provider.of<ThemeProvider>(context);

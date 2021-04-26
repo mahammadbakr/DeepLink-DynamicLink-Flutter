@@ -1,6 +1,10 @@
+import 'dart:async';
+
+import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:test_muhammad/Helpers/DynamicLinksService.dart';
 import 'package:test_muhammad/StateManagment/AppSettingsProvider.dart';
 import 'package:test_muhammad/UI/HomeScreen/Tabs/HomeTab.dart';
 import 'package:test_muhammad/UI/HomeScreen/Tabs/SearchTab.dart';
@@ -12,6 +16,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Future<void> setupDeepLink() async {
+    await createDeepLink();
+    var link = await FirebaseDynamicLinks.instance.getInitialLink();
+    await handleDeepLink(link);
+    FirebaseDynamicLinks.instance.onLink(
+        onSuccess: (PendingDynamicLinkData dynamicLink) async {
+      await handleDeepLink(dynamicLink);
+    });
+  }
+
+  Future<void> handleDeepLink(PendingDynamicLinkData data) async {
+    final Uri uri = data?.link;
+    if (uri != null) {
+      setState(() {
+        Provider.of<AppSettingsProvider>(context, listen: false)
+            .setNavigationTab(NavigationTab.search);
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 0), () async {
+      await setupDeepLink();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var settings = Provider.of<AppSettingsProvider>(context);
