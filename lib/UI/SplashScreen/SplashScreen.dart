@@ -15,6 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // send request to API when the app starts ...
     Provider.of<DataProvider>(context, listen: false)
         .getAllNews();
     Timer(Duration(seconds: 2), () {

@@ -28,7 +28,7 @@ class SearchBar extends StatelessWidget {
               builder: (_, dataList, __) => TextFormField(
                 // initialValue: "Request",
                 onChanged: (text) {
-                  dataList.searchForNews(text: text);
+                  dataList.getNetworkSearchNews(text: text);
                 },
                 maxLines: 1,
                 style: theme(context)
