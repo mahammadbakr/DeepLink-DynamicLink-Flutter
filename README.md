@@ -5,7 +5,7 @@ A new Flutter test application for NITL company.
 Finished at 7:54 AM  |  AST Time
 
 *DeepLink*
-URL: https://nitl.page.link/search
+URL: https://nitl.page.link/search?text=covid
 
 Note: You have to downloaded the application already for Android or IOS.
 
