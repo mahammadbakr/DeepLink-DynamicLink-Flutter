@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
             setState(() {
               settings.setNavigationTab(
                   index == 0 ? NavigationTab.home : NavigationTab.search);
-              print( settings.getNavigationTab().toString());
+              print(settings.getNavigationTab().toString());
             });
           },
         ),
@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
           : theme(context).accentColor.withOpacity(0.3),
       height: 1,
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+      margin: EdgeInsets.only(left: 40, right: 40, bottom: 15),
     );
   }
 }

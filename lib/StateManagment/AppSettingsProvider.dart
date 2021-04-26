@@ -5,6 +5,7 @@ enum NavigationTab { home, search }
 
 class AppSettingsProvider extends ChangeNotifier {
   bool isDarkMode = false;
+  bool isWebViewShown = false;
   NavigationTab _navigationTab= NavigationTab.home;
 
 
@@ -33,6 +34,37 @@ class AppSettingsProvider extends ChangeNotifier {
     isDarkMode = false;
     notifyListeners();
   }
+
+  bool getDarkMode() {
+    if (isDarkMode == null) {
+      isDarkMode = false;
+    }
+    return isDarkMode;
+  }
+
+
+
+
+  //WebView Enabled or Not
+  void hideWebView() {
+    isWebViewShown = false;
+    notifyListeners();
+  }
+
+  void showWebView() {
+    isWebViewShown = true;
+    notifyListeners();
+  }
+
+  bool getWebViewShown() {
+    if (isWebViewShown == null) {
+      isWebViewShown = false;
+    }
+    return isWebViewShown;
+  }
+
+
+
 
 
 }

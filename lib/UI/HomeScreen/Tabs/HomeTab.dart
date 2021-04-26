@@ -14,6 +14,7 @@ class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
     var appSettings = Provider.of<AppSettingsProvider>(context, listen: false);
+
     var width = MediaQuery.of(context).size.width;
     return Center(
       child: Column(

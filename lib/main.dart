@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:test_muhammad/StateManagment/DataProvider.dart';
 import 'Helpers/Theme.dart';
 import 'StateManagment/AppSettingsProvider.dart';
 import 'UI/HomeScreen/HomeScreen.dart';
@@ -17,6 +18,9 @@ void main() {
     providers: [
       ChangeNotifierProvider<AppSettingsProvider>(
         create: (context) => AppSettingsProvider(),
+      ),
+      ChangeNotifierProvider<DataProvider>(
+        create: (context) => DataProvider(),
       ),
     ],
     child: MyApp(),
