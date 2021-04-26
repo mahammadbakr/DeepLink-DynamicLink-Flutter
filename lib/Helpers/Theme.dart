@@ -6,12 +6,14 @@ class AppTheme {
   static const primaryColor = const Color(0xff39fEF9);
   static const accentColor = const Color(0xff2F486D);
   static const backgroundColor = const Color(0xFFf2f2f2);
+  static const transparentColor = const Color(0xFF363636);
   static const interactionColor = const Color(0xFFFADF56);
 
   //Dark Color Constants
   static const darkPrimaryColor = const Color(0xff242526);
   static const darkAccentColor = const Color(0xfffefefe);
-  static const darkBackgroundColor = const Color(0xFFf2f2f2);
+  static const darkBackgroundColor = const Color(0xFF363636);
+  static const darkTransparentColor = const Color(0xFFf2f2f2);
   static const darkInteractionColor = const Color(0xFFFADF56);
 
   //Other Color Constant
@@ -27,6 +29,7 @@ class AppTheme {
     primaryColor: primaryColor,
     accentColor: accentColor,
     textTheme: lightTextTheme,
+    highlightColor: transparentColor,
     primarySwatch: Colors.yellow,
     buttonColor: Colors.yellow.shade600,
     appBarTheme: AppBarTheme(
@@ -46,9 +49,10 @@ class AppTheme {
     backgroundColor: darkBackgroundColor,
     primaryColor: darkPrimaryColor,
     accentColor: darkAccentColor,
+    highlightColor: darkTransparentColor,
     textTheme: darkTextTheme,
     primarySwatch: Colors.yellow,
-    buttonColor: Colors.yellow.shade300,
+    buttonColor: Colors.yellow.shade700,
     appBarTheme: AppBarTheme(
       iconTheme: IconThemeData(color: white),
       color: darkPrimaryColor,

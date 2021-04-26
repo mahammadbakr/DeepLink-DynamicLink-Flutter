@@ -14,12 +14,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    var settings = Provider.of<AppSettingsProvider>(context, listen: false);
+    var settings = Provider.of<AppSettingsProvider>(context);
     return Scaffold(
         backgroundColor: theme(context).backgroundColor,
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: theme(context).backgroundColor,
-          selectedItemColor: Colors.black,
+          selectedItemColor: theme(context).highlightColor,
           selectedLabelStyle:
               TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           unselectedLabelStyle:

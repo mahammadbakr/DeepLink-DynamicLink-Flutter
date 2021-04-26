@@ -92,7 +92,7 @@ class _SearchTabState extends State<SearchTab> {
                                         style: theme(context)
                                             .textTheme
                                             .button
-                                            .copyWith(fontSize: 18),
+                                            .copyWith(fontSize: 18,color: theme(context).highlightColor),
                                       ),
                                     ],
                                   ),
@@ -179,7 +179,7 @@ class _SearchTabState extends State<SearchTab> {
           style: theme(context)
               .textTheme
               .caption
-              .copyWith(fontSize: 16, color: Colors.black54),
+              .copyWith(fontSize: 16, color: theme(context).highlightColor),
         ),
         SizedBox(
           width: 4,
@@ -188,7 +188,7 @@ class _SearchTabState extends State<SearchTab> {
             style: theme(context)
                 .textTheme
                 .button
-                .copyWith(fontSize: 14, color: Colors.black54)),
+                .copyWith(fontSize: 14, color: theme(context).highlightColor)),
         SizedBox(
           width: 10,
         ),
