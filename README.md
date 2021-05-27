@@ -1,4 +1,5 @@
-# NITL_test_muhammad
+# DeepLink Challenge Flutter
+## NITL_Test
 
 A new Flutter test application for NITL company.
 
