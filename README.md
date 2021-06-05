@@ -1,7 +1,8 @@
 # DeepLink Challenge Flutter
-## NITL_Test
+## By Mohammed M Bakr
 
-A new Flutter test application for NITL company.
+A new Flutter App that used Dynamic Links using Firebase.
+a test by NITL Company.
 
 Finished at 7:54 AM  |  AST Time
 
